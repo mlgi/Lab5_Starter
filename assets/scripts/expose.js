@@ -2,6 +2,8 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+const jsConfetti = new JSConfetti();
+
 function hornChange(event) {
   const image = document.querySelector("#expose > img");
   const audio = document.querySelector('audio');
@@ -46,7 +48,12 @@ function volumeChange(event) {
 
 function playSound(event) {
   let audio = document.querySelector('audio');
+  const hornSelection = document.getElementById('horn-select');
+
   audio.play();
+  if (hornSelection.value == "party-horn") {
+    jsConfetti.addConfetti();
+  }
 }
 
 function init() {
