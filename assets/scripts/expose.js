@@ -44,10 +44,18 @@ function volumeChange(event) {
   }
 }
 
+function playSound(event) {
+  let audio = document.querySelector('audio');
+  audio.play();
+}
+
 function init() {
   const hornSelect = document.getElementById('horn-select');
   hornSelect.addEventListener('change', hornChange);
 
   const volumeControl = document.getElementById('volume');
   volumeControl.addEventListener('input',volumeChange);
+
+  const playButton = document.querySelector('button');
+  playButton.addEventListener('click', playSound);
 }
